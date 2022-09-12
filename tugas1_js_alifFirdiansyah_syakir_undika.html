@@ -3,7 +3,6 @@ var pegawai = "Ridwan";
 var jabatan = "Manager";
 var status = "Menikah";
 
-// Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
 if (jabatan == 'Manager') {
     gajiPokok = 15000000;
 } else if(jabatan == 'Asisten Manager') {
@@ -20,13 +19,10 @@ let bpjs = 0.10 * gajiPokok;
 let tunjanganKeluarga = (status == 'Menikah') ? 0.20 * gajiPokok : 0;
 let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
 
-// cetak
     document.write("Data Pegawai" +
         "<br/>Pegawai: " + pegawai +
         "<br/>Jabatan: " + jabatan
         );
-
-
 </script>
 
 <!DOCTYPE html>
@@ -35,7 +31,7 @@ let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tugas 1 Javascript</title>
 </head>
 <body>
     <table border="1">
