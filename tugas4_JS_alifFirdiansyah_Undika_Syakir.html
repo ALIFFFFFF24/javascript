@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container p-5 w-75">
+        <div class="row mb-5">
+            <h1>Checkout Form</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="first" class="form-label">Nama Lengkap Pembeli</label>
+                            <input type="text" class="form-control" id="namaLengkap">
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="first" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="namaBarang">
+                          </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="first" class="form-label">Harga Barang</label>
+                            <input type="number" class="form-control" id="hargaBarang">
+                          </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="first" class="form-label">Jumlah Barang</label>
+                            <input type="number" class="form-control" id="jumlahBarang">
+                          </div>
+                    </div>
+                </div>
+                <div class="row">
+                                <div class="col mb-3">
+                                    <label for="first" class="form-label">Valuta Asing</label>
+                                    <select name="valas" onchange="javascript:konversiKurs()" id="pilihValas" class="form-control">
+                                        <option value="">-- Pilih Valas --</option>
+                                        <option value="14917">-- USD --</option>
+                                        <option value="10590">-- SGD --</option>
+                                        <option value="14918">-- EUR --</option>
+                                    </select>
+                                </div>    
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="first" class="form-label">Kode Promo</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="KODEPROMO" id="kodePromo">
+                        <button class="btn btn-outline-success" type="button" id="btnKodePromo" onclick="javascript:konversiKurs()">Gunakan</button>
+                      </div>
+                </div>    
+</div>
+            </div>
+            <div class="col p-4">
+                <div class="card border-success mb-3" >
+                    <div class="card-header text-center "> <b>Data Pembelian</b> </div>
+                    <div class="card-body text-success">
+                      <p class="card-text">Nama Pembeli : <span id="nama"></span> </p>
+                      <p class="card-text">Nama Barang : <span id="barang"></span> </p>
+                      <p class="card-text">Harga Barang : <span id="harga"></span> </p>
+                      <p class="card-text">Jumlah Barang : <span id="jumlah"></span> </p>
+                      <p class="card-text">Valuta Asing : <span id="valas"></span> </p>
+                    </div>
+                    <div class="card-footer border-success bg-transparent">
+                        <div class="row">
+                            <div class="col"><h5>Total Belanja </h5></div>
+                            <div class="col text-end"><span id="totalVala"></span></div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="row mt-5 w-50">
+            <div class="btn btn-success">Lanjutkan Checkout</div>
+        </div>
+        </div>  
+<script>
+    
+
+    function konversiKurs(){   
+    var namaPembeli = document.getElementById('namaLengkap').value;
+    var namaBarang = document.getElementById('namaBarang').value;
+    var hargaBarang = document.getElementById('hargaBarang').value;
+    var jumlahBarang = document.getElementById('jumlahBarang').value;
+    var select = document.getElementById('pilihValas');
+    var value = select.options[select.selectedIndex].value;
+    var kodePromo = document.getElementById('kodePromo').value;
+
+    //hitung total harga
+    totalHarga = hargaBarang * jumlahBarang;
+
+    //hitung diskon
+    if(kodePromo == "promo20"){
+        diskon = totalHarga * 0.2;
+        totalHarga = totalHarga - diskon;
+    }else if(kodePromo == "promo10"){
+        diskon = totalHarga * 0.1;
+        totalHarga = totalHarga - diskon;
+    }else if(kodePromo == "promo50"){
+        diskon = totalHarga * 0.5;
+        totalHarga = totalHarga - diskon;
+    } else if (kodePromo == ""){
+        totalHarga = hargaBarang * jumlahBarang;
+    }
+
+    //hitung valas
+    totalValas = totalHarga * value;
+
+    //text valuta
+    if(value == 14917){
+        textValue = "USD 14.917";
+    }else if (value == 10590){
+        textValue = "SGD 10.590";
+    } else if (value == 14918) {
+        textValue = "EUR 14.918";
+    }
+
+    document.getElementById('nama').innerHTML = namaPembeli;
+    document.getElementById('barang').innerHTML = namaBarang;
+    document.getElementById('harga').innerHTML = hargaBarang;
+    document.getElementById('jumlah').innerHTML = jumlahBarang;
+    document.getElementById('valas').innerHTML = textValue;
+    document.getElementById('totalVala').innerHTML = totalValas.toLocaleString('id-ID');
+      }
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
