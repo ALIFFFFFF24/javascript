@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body onload="infoGempa()">
+    <div class="container">
+        <h3 class="text-center">Daftar Gempa</h3>
+		<table class="table text-center ">
+			<thead class="bg-success text-white">
+				<tr>
+					<th>NO</th>
+					<th>Lokasi</th>
+					<th>Skala</th>
+					<th>Dampak</th>
+				</tr>
+			</thead>
+			<tbody id="dg">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+			</tbody>
+		</table>
+    </div>
+    <script>
+         class Gempa{
+            constructor(lokasi, skala){
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+                getDampak(){
+                if(this.skala <= 2) this.dampak = 'tidak terasa';
+                else if(this.skala > 2 && this.skala <= 4) this.dampak = 'bangunan retak-retak';
+                else if(this.skala > 4 && this.skala <= 6) this.dampak = 'bangunan roboh';
+                else if(this.skala > 6) this.dampak = 'bangunan roboh & berpotensi tsunami';
+                else this.dampak = '';
+                return this.dampak;
+            }
+
+            
+            }
+            function infoGempa(){
+                let no = 1;
+let dataGempa = '';
+for(g of gempa) { 
+    //looping data di element HTML
+    dataGempa += `<tr>
+                        <td>${no++}</td>
+                        <td>${g.lokasi}</td>
+                        <td>${g.skala}</td>
+                        <td>${g.getDampak()}</td>
+                    </tr>`;            
+}
+document.getElementById('dg').innerHTML = dataGempa;
+            }
+        g1 = new Gempa('Sidoarjo',3);
+        g2 = new Gempa('Jakarta',6);
+        g3 = new Gempa('Surabaya',2);
+        g4 = new Gempa('Surabaya',8);
+        g5 = new Gempa('Sidoarjo',3);
+        g6 = new Gempa('Jakarta',6);
+        g7 = new Gempa('Jogja',9);
+        g8 = new Gempa('Wonoayu',2);
+        g9 = new Gempa('Krian',5);
+        g10 = new Gempa('Malang',1);
+        gempa = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10];
+    </script>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>  
+
+</body>
+</html>
