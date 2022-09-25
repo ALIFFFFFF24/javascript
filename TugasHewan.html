@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tugas 7 JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  </head>
+<style>
+  .card{
+    width: 15rem;
+  }
+</style>
+  <body>
+    <h1 class="text-center p-5">
+      Tugas Javascript Gambar & Suara Hewan
+    </h1>
+    <div class="container p-5">
+      <div class="accordion" id="accordionHewan">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionTernak" aria-expanded="false">Hewan Ternak</button>
+          </h2>
+          <div id="accordionTernak" class="accordion-collapse collapse" data-bs-parent="#accordionHewan">
+            <div class="accordion-body">
+              <div class="row p-5">
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="kambing">Kambing</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="sapi">Sapi</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="bebek">Bebek</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="babi">Babi</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionBuas" aria-expanded="false">Hewan Buas</button>
+          </h2>
+          <div id="accordionBuas" class="accordion-collapse collapse" data-bs-parent="#accordionHewan">
+            <div class="accordion-body">
+              <div class="row p-5">
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="singa">Singa</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="harimau">Harimau</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="gorila">Gorilla</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="rubah">Rubah</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionUnggas" aria-expanded="false">Hewan Unggas</button>
+          </h2>
+          <div id="accordionUnggas" class="accordion-collapse collapse" data-bs-parent="#accordionHewan">
+            <div class="accordion-body">
+              <div class="row p-5">
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="kakatua">Burung KakaTua</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="flamingo">Flamingo</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="angsa">Angsa</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <h5 class="card-title" id="merak">Burung Merak</h5>
+                      <div class="audio"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jqueryhewan.js"></script>
+  </body>
+</html>
